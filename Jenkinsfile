@@ -1,12 +1,38 @@
 pipeline {
-    agent {
-        docker { 'python:3.10-bullseye' }
-    }
+    agent any
+
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'python3 --version'
+                echo 'Building the project...'
+                sh 'echo "Hello, world!"'
             }
         }
-    {
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'echo "Running tests..."'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                sh 'echo "Deploying project..."'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed.'
+        }
+        success {
+            echo 'Build succeeded.'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
 }
