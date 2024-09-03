@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: jnlp
-    image: jenkins/inbound-agent:4.3-4-jdk11
+    image: jenkins/inbound-agent:latest-jdk17
 '''
 
         }
