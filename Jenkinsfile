@@ -1,29 +1,28 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'my-kubernetes-agent' // Label for the Kubernetes pod that is already defined in Jenkins
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'sleep 1000'
+                sh 'mvn clean install'
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'echo "Running tests..."'
+                sh 'npm install'
+                sh 'npm test'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying the project...'
-                sh 'echo "Deploying project..."'
+                // Add your deployment commands here
             }
         }
     }
-
     post {
         always {
             echo 'Pipeline completed.'
