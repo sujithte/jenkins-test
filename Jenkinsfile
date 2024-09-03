@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'my-kubernetes-agent' // Label for the Kubernetes pod that is already defined in Jenkins
+        label 'abc' // Label for the Kubernetes pod that is already defined in Jenkins
     }
     stages {
         stage('Build') {
