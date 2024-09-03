@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'abc' // Label for the Kubernetes pod that is already defined in Jenkins
+        label 'jenkins-np-badak-slave' // Label for the Kubernetes pod that is already defined in Jenkins
     }
     stages {
         stage('Build') {
