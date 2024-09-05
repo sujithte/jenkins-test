@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        kubernetes {
-                label "abc-test"
-               defaultContainer 'jnlp'
-        }
+      label "sibadak"
     }
 
     stages {
